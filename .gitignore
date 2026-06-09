@@ -1,0 +1,17 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Editors
+.idea/
+.vscode/
+*.swp
+
+# Python (if examples grow)
+__pycache__/
+*.pyc
+.venv/
+
+# Learner journals are generated inside target repos, not here.
+# If you keep your own journal in this repo while developing, ignore it:
+.dojo/
