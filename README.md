@@ -1,5 +1,7 @@
 # codebase-dojo
 
+**[🇰🇷 한국어 README](README_KOR.md)**
+
 > A Socratic tutor for your codebase. It asks **why** — and never just tells you.
 
 `codebase-dojo` is a [Claude Code](https://docs.claude.com/en/docs/claude-code) skill that points the
