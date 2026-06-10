@@ -9,10 +9,12 @@ the director of your code, not an operator who rubber-stamps an AI's output.
 
 ## Why
 
-AI coding tools make you *feel* faster while you understand less. Experienced developers have been measured
-as **slower on familiar code** with AI assistance even while believing they were faster — the gap between
-*feeling* and *understanding*. Lean on the tool too hard and you slide from **director** to **operator**:
-you stop re-deriving decisions and start approving them on faith.
+AI coding tools make you *feel* faster while you understand less. In [one 2025 randomized study][metr],
+experienced open-source developers were **slower** on familiar code with AI assistance even while believing
+the tools had sped them up — a gap between *feeling* and *understanding*. Lean on the tool too hard and you
+slide from **director** to **operator**: you stop re-deriving decisions and start approving them on faith.
+
+[metr]: https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/
 
 `codebase-dojo` is the counterweight. It refuses to hand you answers and instead makes you re-derive them.
 
@@ -22,7 +24,7 @@ you stop re-deriving decisions and start approving them on faith.
 - Asks **"why"** questions one at a time, always citing `file:line`.
 - **Never hands over the answer.** Wrong? → hint → narrow → reveal → re-derive (`●●○○`).
 - Grades whether you named the **reason / trade-off**, not keyword overlap. Sound-but-different answers count.
-- Grows a **journal** (mastery board, spaced-review queue, aha-moments) the next session resumes from.
+- Grows a **journal** (mastery board, spaced-review queue, session log) the next session resumes from.
 - Five **lenses**: architecture · security · dev · testing · design.
 - **Cross-project patterns**: when a pattern recurs in your *other* repos, it asks why it was written that
   way there — turning local knowledge into transferable judgment.
@@ -47,7 +49,7 @@ reads only the files a chapter needs.
    │   correct ─────┴─▶ harder follow-up ("does that still hold when Y?")
    │   wrong ─▶ hint → narrow → reveal(+source) → re-derive
    ▼
- update journal (mastery / spaced-review / aha-moments / cross-pattern notes)
+ update journal (mastery / spaced-review / session log / cross-pattern notes)
 ```
 
 ## Install

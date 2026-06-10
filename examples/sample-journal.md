@@ -7,6 +7,7 @@
 - project: url-shortener (small Flask + SQLite link shortener)
 - size: small (files 6 / ~480 LOC)
 - created: 2026-06-01 / last updated: 2026-06-08
+- extra_scan_paths: ../internal-api, ../webhook-relay   (authorized for cross-project grep)
 
 ## Learning map
 1. **Encoding** — targets: `app/encode.py:1-40` / key: base62 of the auto-increment id; why not a random slug

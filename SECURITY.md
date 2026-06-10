@@ -22,6 +22,10 @@ The areas worth scrutiny are:
 
 - The skill instructions (`SKILL.md`) — e.g. prompt-injection paths, or
   instructions that could lead to unsafe shell/file actions.
+- The cross-project pattern step, which can run `rg` (ripgrep) over **other repositories
+  on your machine** to spot recurring patterns. It is scoped to the target repo plus the
+  paths you authorize (`extra_scan_paths:` in the journal), and asks for your confirmation
+  before reading anything outside the target repo for the first time in a session.
 - Example content under `examples/`.
 
 The learner's journal (`.dojo/<project>.md`) is generated locally inside the

@@ -9,7 +9,10 @@ Point the Socratic method at a codebase. The goal is **not** to memorize facts �
 re-derive the *why, the alternatives, and the consequences* of design decisions, so you stay
 the director of your code instead of an operator who rubber-stamps an AI's output.
 
-Invoke: `/codebase-dojo <path-or-name> [lens]`
+Invoke: `/codebase-dojo <path-or-name> [lens] [--map|--weak]`
+- `[lens]` — focus on one lens (architecture / security / dev / testing / design); omit to auto-pick the weakest.
+- `--map` — build/update the learning map only, then stop. No questions are asked.
+- `--weak` — skip straight to the spaced-review queue and drill only its weakest items.
 
 ## When to use
 - Onboarding to an unfamiliar repo without pretending you understand it.
@@ -32,6 +35,11 @@ Invoke: `/codebase-dojo <path-or-name> [lens]`
   - **Exists** → read the learning map / mastery board / spaced-review queue / log, and
     **resume from the weakest spots.**
   - **Missing** → build it once (step 2).
+- **Flag dispatch** (after resolving):
+  - `--map` → run step 2 (build/update the learning map and write the journal), then **stop** —
+    skip questioning entirely. Use this to refresh the map after the code changed.
+  - `--weak` → skip the normal weakest-spot pick and drill **only** the spaced-review queue
+    (step 3 sourced from the queue, oldest-due first). If the queue is empty, say so and stop.
 
 ### 2. (First run) Build the learning map → journal
 - Read the repo. For large repos, read by module/directory group.
@@ -56,12 +64,20 @@ Partial/wrong → 1 hint (direction only) → 2 narrow (a sharper sub-question)
                 → 3 reveal (the reason + source + why their answer missed)
                 → 4 re-derive ("say it back in your own words"). Show stage as ●●○○
 ```
+- **Stage meter `●●○○`**: four stages (hint · narrow · reveal · re-derive); filled circles = stages
+  used so far, hollow = remaining. So `●●○○` means you are on stage 2 (narrow) of 4.
 - **Self-check backup**: at the reveal stage, show the supporting excerpt so the learner can verify.
 - Push every weakly-answered "why" into the spaced-review queue.
 
 ### 5. Cross-project patterns
 - When a pattern in the answer rings a bell, use `rg` (ripgrep) to check whether the **same pattern
-  exists in the learner's other repos** (sibling directories, or paths they configure).
+  exists in the learner's other repos**.
+- **Scope is opt-in.** Read the `extra_scan_paths:` field in the journal's `## Meta` block for the
+  directories the learner has authorized. Scanning is limited to those paths plus the target repo itself.
+- **Consent before reaching outside the target repo.** The first time a session would scan a sibling
+  or any path outside the target repo, ask the learner once: *"Search `<paths>` for this pattern? (y/n)"*.
+  Only proceed on yes. On the learner's request, record the approved paths into `extra_scan_paths:` so
+  later sessions don't re-ask. Never scan paths that are neither the target repo nor in `extra_scan_paths:`.
 - If found: explain "this pattern also lives in `<other-repo>` — why was it written that way there?"
   and record it in the cross-pattern notes. This is what turns local knowledge into transferable judgment.
 
@@ -76,6 +92,7 @@ This is what the next session resumes from.
 
 ## Meta
 - project / size (files n / LOC n) / created / last updated
+- extra_scan_paths: <paths the learner authorized for cross-project grep; empty = target repo only>
 
 ## Learning map
 1. <chapter> — targets: `path:line` / key: <design point> / lenses: ...
