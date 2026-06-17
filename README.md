@@ -57,7 +57,7 @@ reads only the files a chapter needs.
 ## Install
 
 ```bash
-# manual (clone into your Claude Code skills dir)
+# clone into your Claude Code skills directory
 git clone https://github.com/oh-namgyu/codebase-dojo ~/.claude/skills/codebase-dojo
 ```
 
