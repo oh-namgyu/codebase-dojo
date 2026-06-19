@@ -1,5 +1,10 @@
 # codebase-dojo
 
+[![CI](https://github.com/oh-namgyu/codebase-dojo/actions/workflows/ci.yml/badge.svg)](https://github.com/oh-namgyu/codebase-dojo/actions/workflows/ci.yml)
+[![License](https://img.shields.io/github/license/oh-namgyu/codebase-dojo)](LICENSE)
+[![Release](https://img.shields.io/github/v/release/oh-namgyu/codebase-dojo)](https://github.com/oh-namgyu/codebase-dojo/releases)
+
+
 **[🇰🇷 한국어 README](README_KOR.md)**
 
 > A Socratic tutor for your codebase. It asks **why** — and never just tells you.

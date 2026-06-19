@@ -1,0 +1,28 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Required files present
+        run: |
+          set -e
+          for f in README.md SKILL.md LICENSE SECURITY.md CONTRIBUTING.md; do
+            test -f "$f" || { echo "::error::missing $f"; exit 1; }
+          done
+          test -d examples || { echo "::error::missing examples/"; exit 1; }
+
+      - name: No obvious secrets
+        run: |
+          if grep -rEn 'sk-[A-Za-z0-9]{20,}|AKIA[0-9A-Z]{16}|-----BEGIN (RSA|OPENSSH) PRIVATE KEY-----' \
+               --include='*.md' --include='*.json' --include='*.yml' . ; then
+            echo "::error::possible secret found"; exit 1
+          fi
+          echo "no obvious secrets"
