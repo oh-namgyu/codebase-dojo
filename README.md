@@ -1,13 +1,10 @@
 # codebase-dojo
 
 [![CI](https://github.com/oh-namgyu/codebase-dojo/actions/workflows/ci.yml/badge.svg)](https://github.com/oh-namgyu/codebase-dojo/actions/workflows/ci.yml)
-[![License](https://img.shields.io/github/license/oh-namgyu/codebase-dojo)](LICENSE)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Release](https://img.shields.io/github/v/release/oh-namgyu/codebase-dojo)](https://github.com/oh-namgyu/codebase-dojo/releases)
 
-
 > **한글 요약** — 내 코드베이스를 소재로 한 소크라테스식 튜터입니다 — 답을 알려주지 않고 "왜"를 물어서 코드 이해력을 훈련시킵니다. *(전체 한국어 문서: [README_KOR.md](README_KOR.md))*
-
-**[🇰🇷 한국어 README](README_KOR.md)**
 
 > A Socratic tutor for your codebase. It asks **why** — and never just tells you.
 
@@ -118,4 +115,4 @@ Claude Code skill — credit where due:
 
 ## License
 
-[MIT](LICENSE)
+MIT — see [LICENSE](LICENSE). Security policy: [SECURITY.md](SECURITY.md).
